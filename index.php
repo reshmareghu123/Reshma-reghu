@@ -61,14 +61,19 @@ if(isset($_GET["mybutton"]))
   $roll=$_GET["getRoll"];
   $college=$_GET["getCollege"];
   $addmission=$_GET["getAddmissionnumber"];
-  echo $name;
-  echo "<br>";
-  echo $roll;
-  echo "<br>";
-  echo $college;
-  echo "<br>";
-  echo $addmission;
-  echo "<br>";
+  $serverName="localhost";
+  $DbUsername="root";
+  $DbPassword="";
+  $DbName="mydb";
+  $connection=new mysqli($serverName,$DbUsername,$DbPassword,$DbName);
+$sql="INSERT INTO `student`( `name`, `rollno`, `admno`, `college`) VALUES ('$name',$roll,$addmission,'$college')";
+$result=$connection->query($sql);
+if($result===TRUE)
+{
+  echo"succesfully insert";
 }
-
+else{
+  echo $connection->error;
+}
+}
 ?>
