@@ -12,13 +12,13 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="index.html">student entry</a>
+      <a class="nav-link" href="index.php">student entry</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="search.html">search</a>
+      <a class="nav-link" href="search.php">search</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" href="edit.html">edit</a>
+      <a class="nav-link disabled" href="edit.php">edit</a>
     </li>
   </ul>
      

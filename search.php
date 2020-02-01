@@ -11,30 +11,37 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">student entry</a>
+            <a class="nav-link" href="index.php">student entry</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="search.html">search</a>
+            <a class="nav-link" href="search.php">search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="edit.html">edit</a>
+            <a class="nav-link" href="edit.php">edit</a>
           </li>
         </ul>
       </nav>
+      <h1>
+      search
+      </h1>
+      <br>
       <form method="GET">
-     <table>
+     <table class="table">
          <tr>
          <td>
 student Admission Number
          </td>
          <td>
-             <input type="text" search="front-control"name="adm">
+             <input type="text" search="front-control"name="getAdmno">
          </td>
         
     </tr>
     <tr>
     <td></td>
-    <td><button type="text" class="btn btn-success" name="getvalue">search</button></td>
+    <td><button type="submit" class="btn btn-success" name="submit">
+    search
+    </button>
+    </td>
     </tr>
 
      </table> 
@@ -42,9 +49,9 @@ student Admission Number
 </body>
 </html>
 <?php
-if(isset($_GET["getvalue"]))
+if(isset($_GET["submit"]))
 {
-  $adm=$_GET["adm"];
+  $adm=$_GET["getAdmno"];
 $serverName="localhost";
 $DbUsername="root";
 $DbPassword="";
@@ -59,12 +66,11 @@ while($row=$result->fetch_assoc())
 $name=$row["name"];
 $roll=$row["rollno"];
 $college=$row["college"];
-echo $name;
-echo $roll;
-echo $college;
+echo "<table class='table'> <tr><td>name</td><td>$name</td></tr>
+<tr><td>roll</td><td>$roll</tr><tr><td>college</td><td>$college</tr></table>";
 }
 }
 else{
-  echo"Invalid Admno";
+  echo"Invalid ";
 }
 }
